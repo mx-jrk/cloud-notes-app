@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cloud_Notes_App.NotePage"
+             Title="NotePage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Margin="5">
+		    <Editor x:Name="TitleEditor"
+					FontSize="25"
+					FontFamily="DRS"
+		            Placeholder="Введите название заметки"
+		            VerticalOptions="FillAndExpand"
+		            AutoSize="TextChanges"/>
+
+		    <Editor x:Name="TextEditor"
+		            FontSize="20"
+		            FontFamily="DRR"
+		            Placeholder="Введите содержимое заметки"
+		            VerticalOptions="FillAndExpand"
+		            AutoSize="TextChanges"/>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
+			    <Button Text="Save"
+			            FontSize="20"
+			            FontFamily="DRR"
+			            Clicked="SaveButton_Clicked" />
+
+			    <Button Grid.Column="1"
+			            Text="Delete"
+			            FontSize="20"
+			            FontFamily="DRR"
+			            Clicked="DeleteButton_Clicked" />
+		    </Grid>
+	    </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

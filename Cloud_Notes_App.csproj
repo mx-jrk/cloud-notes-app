@@ -55,4 +55,10 @@
 	  <None Remove="Resources\Images\note.png" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="NotePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

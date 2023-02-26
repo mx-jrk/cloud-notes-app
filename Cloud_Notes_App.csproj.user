@@ -8,7 +8,7 @@
     <DefaultDevice>pixel_5_-_api_33</DefaultDevice>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="NotePage.xaml">
+    <MauiXaml Update="Views\NotePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

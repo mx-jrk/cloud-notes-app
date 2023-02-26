@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cloud_Notes_App.NotePage"
+             x:Class="Cloud_Notes_App.Views.NotePage"
+             xmlns:model="clr-namespace:Cloud_Notes_App.Models.Note"
              Title="NotePage"
              Shell.NavBarIsVisible="False">
     <ScrollView>
@@ -9,6 +10,7 @@
 		    <Editor x:Name="TitleEditor"
 					FontSize="25"
 					FontFamily="DRS"
+					Text="{Binding Title}"
 		            Placeholder="Введите название заметки"
 		            VerticalOptions="FillAndExpand"
 		            AutoSize="TextChanges"/>
@@ -16,6 +18,7 @@
 		    <Editor x:Name="TextEditor"
 		            FontSize="20"
 		            FontFamily="DRR"
+					Text="{Binding Text}"
 		            Placeholder="Введите содержимое заметки"
 		            VerticalOptions="FillAndExpand"
 		            AutoSize="TextChanges"/>

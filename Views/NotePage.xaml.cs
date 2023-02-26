@@ -1,4 +1,4 @@
-namespace Cloud_Notes_App;
+namespace Cloud_Notes_App.Views;
 
 public partial class NotePage : ContentPage
 {

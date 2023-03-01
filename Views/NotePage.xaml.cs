@@ -1,33 +1,66 @@
 namespace Cloud_Notes_App.Views;
-
+[QueryProperty(nameof(ItemId), nameof(ItemId))]
 public partial class NotePage : ContentPage
 {
-    string fileName = Path.Combine(FileSystem.AppDataDirectory, "note.txt");
+
+    private string itemId;
+    public string ItemId
+    {
+        get { return itemId; }
+        set
+        {
+            itemId = value;
+            LoadNote(value);
+        }
+    }
     public NotePage()
 	{
-		InitializeComponent();
+        InitializeComponent();
+
+        string randomFileName = $"{Path.GetRandomFileName()}.note.txt";
+
+        LoadNote(Path.Combine(FileSystem.AppDataDirectory, randomFileName));
+
+
+    }
+
+    private void LoadNote(string fileName)
+    {
+        Models.Note note = new Models.Note();
+        note.FileName = fileName;
+        
         if (File.Exists(fileName))
         {
             string[] file_content = File.ReadAllText(fileName).Split('\n');
-
-            this.FindByName<Editor>("TitleEditor").Text = file_content[0];
-            this.FindByName<Editor>("TextEditor").Text = file_content[1];
+            note.Date = File.GetCreationTime(fileName);
+            note.Title = file_content[0];
+            note.Text = file_content[1];
         }
-            
+
+        BindingContext = note;
     }
-    private void SaveButton_Clicked(object sender, EventArgs e)
+    private async void SaveButton_Clicked(object sender, EventArgs e)
     {
-        File.WriteAllText(fileName, this.FindByName<Editor>("TitleEditor").Text.ToString() + '\n' + this.FindByName<Editor>("TextEditor").Text.ToString());
+        if (this.FindByName<Editor>("TitleEditor").Text == null || this.FindByName<Editor>("TextEditor").Text == null) return;
+        if (BindingContext is Models.Note note)
+        {
+            File.WriteAllText(note.FileName, this.FindByName<Editor>("TitleEditor").Text.ToString() + '\n' + this.FindByName<Editor>("TextEditor").Text.ToString());
+        }
+        await Shell.Current.GoToAsync("..");
     }
 
-    private void DeleteButton_Clicked(object sender, EventArgs e)
+    private async void DeleteButton_Clicked(object sender, EventArgs e)
     {
-        if (File.Exists(fileName))
-            File.Delete(fileName);
+        bool dont_delete = await DisplayAlert("Подтверждение", "Вы уверены, что хотите выполнить это действие?", "<Нет", "Да");
+
+        if (dont_delete) return;
+        if (BindingContext is Models.Note note && File.Exists(note.FileName))
+            File.Delete(note.FileName);
 
         this.FindByName<Editor>("TitleEditor").Text= string.Empty;
         this.FindByName<Editor>("TextEditor").Text = string.Empty;
 
+        await Shell.Current.GoToAsync("..");
     }
 
 }

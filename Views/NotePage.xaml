@@ -24,13 +24,13 @@
 		            AutoSize="TextChanges"/>
 
             <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
-			    <Button Text="Save"
+			    <Button Text="Сохранить"
 			            FontSize="20"
 			            FontFamily="DRR"
 			            Clicked="SaveButton_Clicked" />
 
 			    <Button Grid.Column="1"
-			            Text="Delete"
+			            Text="Удалить"
 			            FontSize="20"
 			            FontFamily="DRR"
 			            Clicked="DeleteButton_Clicked" />

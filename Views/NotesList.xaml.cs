@@ -20,6 +20,7 @@ public partial class NotesList : ContentPage
         await Shell.Current.GoToAsync($"{nameof(NotePage)}");
     }
 
+    //Choose note
     private async void notesCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (e.CurrentSelection.Count != 0)

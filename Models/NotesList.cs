@@ -1,11 +1,4 @@
-﻿using Microsoft.Maui.Storage;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Android.Provider.ContactsContract.CommonDataKinds;
+﻿using System.Collections.ObjectModel;
 
 namespace Cloud_Notes_App.Models
 {

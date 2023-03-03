@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Cloud_Notes_App</ApplicationTitle>
+		<ApplicationTitle>Заметки</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.cloud_notes_app</ApplicationId>
@@ -32,10 +32,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\logo.svg" color="#ffffff" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\AppIcon\logo.svg" color ="#F8F8F8" BaseSize ="755, 1154" Stretch="Uniform"/>
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />

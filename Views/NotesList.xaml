@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cloud_Notes_App.Views.NotesList"
              Title="Список заметок"
-             >
-	
+             
+>
+
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Text="Добавить" Clicked="Add_Clicked" IconImageSource="{FontImage Glyph='+', Color=Black, Size=250, FontFamily=DRR}"/>
 
@@ -14,12 +15,13 @@
 	                ItemsSource="{Binding Notes}"
 	                Margin="20"
 	                SelectionMode="Single"
-	                SelectionChanged="notesCollection_SelectionChanged">
+	                SelectionChanged="notesCollection_SelectionChanged"
+    >
 
 		<CollectionView.ItemTemplate>
 			<DataTemplate>
-				<StackLayout>
-                    <BoxView HeightRequest="1" Color="#ffa500" HorizontalOptions="FillAndExpand" />
+				<StackLayout BackgroundColor="White">
+                    <BoxView HeightRequest="1" Color="Orange" HorizontalOptions="FillAndExpand"/>
                     <Label Text="{Binding Title_reduced}" FontFamily="DRS" FontSize="22"/>
                     <Label Text="{Binding Text_reduced}" FontFamily="DRR" FontSize="18"/>
 					<Label Text="{Binding Date}" FontFamily="DRR" FontSize="14" TextColor="Silver"/>

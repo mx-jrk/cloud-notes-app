@@ -16,6 +16,7 @@ public partial class NotePage : ContentPage
     public NotePage()
 	{
         InitializeComponent();
+        
 
         string randomFileName = $"{Path.GetRandomFileName()}.note.txt";
 
@@ -31,7 +32,7 @@ public partial class NotePage : ContentPage
         
         if (File.Exists(fileName))
         {
-            string[] file_content = File.ReadAllText(fileName).Split('\n');
+            string[] file_content = File.ReadAllText(fileName).Split('\n' + "!--The_end_of_Title--!" + '\n');
             note.Date = File.GetCreationTime(fileName);
             note.Title = file_content[0];
             note.Text = file_content[1];
@@ -44,14 +45,15 @@ public partial class NotePage : ContentPage
         if (this.FindByName<Editor>("TitleEditor").Text == null || this.FindByName<Editor>("TextEditor").Text == null) return;
         if (BindingContext is Models.Note note)
         {
-            File.WriteAllText(note.FileName, this.FindByName<Editor>("TitleEditor").Text.ToString() + '\n' + this.FindByName<Editor>("TextEditor").Text.ToString());
+            File.WriteAllText(note.FileName, this.FindByName<Editor>("TitleEditor").Text.ToString() + '\n' + "!--The_end_of_Title--!" + '\n' + this.FindByName<Editor>("TextEditor").Text.ToString());
         }
         await Shell.Current.GoToAsync("..");
     }
 
     private async void DeleteButton_Clicked(object sender, EventArgs e)
     {
-        bool dont_delete = await DisplayAlert("Подтверждение", "Вы уверены, что хотите выполнить это действие?", "<Нет", "Да");
+        if (this.FindByName<Editor>("TitleEditor").Text == null || this.FindByName<Editor>("TextEditor").Text == null) return;
+        bool dont_delete = await DisplayAlert("Подтверждение", "Вы уверены, что хотите выполнить это действие?", "Нет", "Да");
 
         if (dont_delete) return;
         if (BindingContext is Models.Note note && File.Exists(note.FileName))

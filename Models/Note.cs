@@ -23,11 +23,11 @@
             }
         public void get_reduced()
             {
-                if (Title.Length > 20) Title_reduced = Title.Substring(0, 20) + "...";
-                else Title_reduced = Title;
+                if (Title.Split('\n')[0].Length > 20) Title_reduced = Title.Split('\n')[0].Substring(0, 20) + "...";
+                else Title_reduced = Title.Split('\n')[0];
 
-                if (Text.Length > 50) Text_reduced = Text.Substring(0,35) + "...";
-                else Text_reduced= Text;
+                if (Text.Split('\n')[0].Length > 50) Text_reduced = Text.Split('\n')[0].Substring(0,35) + "...";
+                else Text_reduced= Text.Split('\n')[0];
             }
 
 

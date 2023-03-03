@@ -1,5 +1,4 @@
 ﻿namespace Cloud_Notes_App;
-
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()

@@ -22,8 +22,8 @@ namespace Cloud_Notes_App.Models
                     {
                         FileName = filename,
                         Date = File.GetCreationTime(filename),
-                        Title = File.ReadAllText(filename).Split('\n')[0],
-                        Text = File.ReadAllText(filename).Split('\n')[1],
+                        Title = File.ReadAllText(filename).Split('\n' + "!--The_end_of_Title--!" + '\n')[0],
+                        Text = File.ReadAllText(filename).Split('\n' + "!--The_end_of_Title--!" + '\n')[1],
                     };
                         note.get_reduced();
                         return note;

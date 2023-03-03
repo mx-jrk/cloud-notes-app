@@ -1,5 +1,4 @@
 namespace Cloud_Notes_App.Views;
-
 public partial class NotesList : ContentPage
 {
 	public NotesList()

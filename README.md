@@ -1,6 +1,6 @@
 # Cloud Notes📝
 
-![Logo](Resources\Images\App's_images\logo.png)
+![Logo](https://github.com/mx-jrk/cloud-notes-app/blob/main/Resources/Images/App's_images/logo.png)
 
 
 Cloud Notes — это простое приложение для создания заметок, созданное с помощью .NET MAUI. Оно позволяет создавать и хранить заметки с заголовком и текстом.
@@ -12,8 +12,8 @@ Cloud Notes — это простое приложение для создани
 
 
 ## Скриншоты
-![NotesList_ScreenShot](Resources\Images\App's_images\NotesList_ScreenShot.png)
-![Note_ScreenShot](Resources\Images\App's_images\Note_ScreenShot.png)
+![NotesList_ScreenShot](https://github.com/mx-jrk/cloud-notes-app/blob/main/Resources/Images/App's_images/NotesList_ScreenShot.jpg)
+![Note_ScreenShot](https://github.com/mx-jrk/cloud-notes-app/blob/main/Resources/Images/App's_images/Note_ScreenShot.jpg)
 ## Установка
 Для установки приложения, необходимо скачать .apk файл из раздела [релизов](https://github.com/mx-jrk/cloud-notes-app/tree/main/bin/Release/net6.0-android) на GitHub. После этого необходимо установить этот файл на ваше Android-устройство.
 ## Как использовать
